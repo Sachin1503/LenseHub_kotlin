@@ -1,6 +1,7 @@
 package com.sachin.lenshub.adapter;
 
 // Created by sachin singh on 20/7/18.
+//https://github.com/luizgrp/SectionedRecyclerViewAdapter .. reference 
 
 import android.content.Context;
 import android.support.annotation.NonNull;
