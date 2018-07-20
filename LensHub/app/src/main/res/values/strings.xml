@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LensHub</string>
+    <string name="app_name">TestApp</string>
     <string name="welcome_to_lenshub">Welcome to TestApp</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_navigation">NavigationActivity</string>

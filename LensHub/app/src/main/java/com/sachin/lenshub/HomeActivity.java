@@ -16,9 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.sachin.lenshub.callback.LHOnClickListener;
 import com.sachin.lenshub.dummy.DummyContent;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,ItemsFragment.OnListFragmentInteractionListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,LHOnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container,new HomeFragment());
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -79,8 +85,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             // Handle the camera action
            FragmentManager fragmentManager = getSupportFragmentManager();
            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-           fragmentTransaction.replace(R.id.container,new ItemsFragment());
+           fragmentTransaction.replace(R.id.container,new HomeFragment());
            fragmentTransaction.commit();
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -98,8 +105,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onClick(Object o) {
 
     }
 }
