@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sachin/Experiments/kotlin/SuperTestApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml",
+            "outputFile": "/home/sachin/Experiments/kotlin/TestAppKotlin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-si/values-si.xml",
             "map": [
                 {
                     "source": "/home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/res/values-si/values.xml",

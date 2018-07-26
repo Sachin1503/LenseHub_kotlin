@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sachin/Experiments/kotlin/SuperTestApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/sachin/Experiments/kotlin/TestAppKotlin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/home/sachin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/f76a3796595ed3fbeaf74bd3d1023350/res/values-v24/values-v24.xml",

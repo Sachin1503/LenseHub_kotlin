@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sachin/Experiments/kotlin/SuperTestApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "/home/sachin/Experiments/kotlin/TestAppKotlin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "/home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/res/values-zh-rCN/values.xml",
