@@ -1,0 +1,192 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+MERGED from [com.android.support:design:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/88038f384269ebca4394c3d7cb905966/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/c13109463c8d3e683a551c0ee8dbf50f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/sachin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/b338194922bfb56a613cce31b8b8db5e/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/8406323ec8df08528c850a55dc2cede1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/e86b59c0ab798059d1e147dba4a5273c/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/4f6af4236ce7996dd17c5c71276a1c9d/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d58eb711b5325b7d8b63187a74387464/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e4a1e5ad2285b6f414a0f4357ef11b8a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/ebd2bd7cf5893714e00f8aa5061175e8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/6b0a58b1ce3b63e2f3421fd3df3b61ad/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/94f9d2c94f476e2a1f418747a3a74165/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a43a6f764ee4289adabb62ae494c426d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/9228b8bd25051904b10ead24e29c4925/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f47a886128a3d20dcd9908983270c606/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/f76a3796595ed3fbeaf74bd3d1023350/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/12a56248f46665989dcf723d33905ffe/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d29493b8ebfa685848c7f9efc8c12664/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4ee845bd3f32241e951cfeec4900c38f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7e03320caebf33af6eba0da413fa975c/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/6d4708824f04cffb4d1f93ce31ca03b6/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+	package
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:3:5-33
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:1-29:12
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:5:5-27:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/sachin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/b338194922bfb56a613cce31b8b8db5e/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/sachin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/b338194922bfb56a613cce31b8b8db5e/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/4f6af4236ce7996dd17c5c71276a1c9d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/4f6af4236ce7996dd17c5c71276a1c9d/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:22:5-26:19
+	android:supportsRtl
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.sachin.lenshub.SignInActivity
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:12:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:16:27-74
+activity#com.sachin.lenshub.HomeActivity
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:19:9-22:59
+	android:label
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:21:13-56
+	android:theme
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:22:13-56
+	android:name
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:20:13-41
+activity#com.sachin.lenshub.NavigationActivity
+ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:23:9-26:68
+	android:label
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:25:13-62
+	android:theme
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:26:13-56
+	android:name
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml:24:13-47
+uses-sdk
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/88038f384269ebca4394c3d7cb905966/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/88038f384269ebca4394c3d7cb905966/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/c13109463c8d3e683a551c0ee8dbf50f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/c13109463c8d3e683a551c0ee8dbf50f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/sachin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/b338194922bfb56a613cce31b8b8db5e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /home/sachin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/b338194922bfb56a613cce31b8b8db5e/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/8406323ec8df08528c850a55dc2cede1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-15.0.1.aar/8406323ec8df08528c850a55dc2cede1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/e86b59c0ab798059d1e147dba4a5273c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-15.0.1.aar/e86b59c0ab798059d1e147dba4a5273c/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/4f6af4236ce7996dd17c5c71276a1c9d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/4f6af4236ce7996dd17c5c71276a1c9d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d58eb711b5325b7d8b63187a74387464/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d58eb711b5325b7d8b63187a74387464/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e4a1e5ad2285b6f414a0f4357ef11b8a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/e4a1e5ad2285b6f414a0f4357ef11b8a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/ebd2bd7cf5893714e00f8aa5061175e8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/ebd2bd7cf5893714e00f8aa5061175e8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/6b0a58b1ce3b63e2f3421fd3df3b61ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/6b0a58b1ce3b63e2f3421fd3df3b61ad/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/94f9d2c94f476e2a1f418747a3a74165/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/94f9d2c94f476e2a1f418747a3a74165/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a43a6f764ee4289adabb62ae494c426d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/a43a6f764ee4289adabb62ae494c426d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/9228b8bd25051904b10ead24e29c4925/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/9228b8bd25051904b10ead24e29c4925/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f47a886128a3d20dcd9908983270c606/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/f47a886128a3d20dcd9908983270c606/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/f76a3796595ed3fbeaf74bd3d1023350/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/f76a3796595ed3fbeaf74bd3d1023350/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/12a56248f46665989dcf723d33905ffe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/12a56248f46665989dcf723d33905ffe/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d29493b8ebfa685848c7f9efc8c12664/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/d29493b8ebfa685848c7f9efc8c12664/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4ee845bd3f32241e951cfeec4900c38f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4ee845bd3f32241e951cfeec4900c38f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7e03320caebf33af6eba0da413fa975c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7e03320caebf33af6eba0da413fa975c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/6d4708824f04cffb4d1f93ce31ca03b6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/sachin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/6d4708824f04cffb4d1f93ce31ca03b6/AndroidManifest.xml:20:5-44
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		ADDED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+		INJECTED from /home/sachin/Experiments/kotlin/SuperTestApp/app/src/main/AndroidManifest.xml
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-auth-15.0.1.aar/a4b3c79940de52f4e9668472b59787e4/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/38714705130f9b263fdfe112a8d36ca8/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /home/sachin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/d80d59689e8792da69023b4adf8eb07b/AndroidManifest.xml:24:13-58
