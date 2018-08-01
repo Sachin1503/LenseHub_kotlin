@@ -21,7 +21,7 @@ class HomeFragment : Fragment(),LHOnClickListener {
             view.setHasFixedSize(true)
             val mLayoutManager = LinearLayoutManager(activity)
             view.layoutManager = mLayoutManager
-            view.adapter = SpanAdapter(requireContext(),getDummySnapData())
+            view.adapter = SpanAdapter(requireContext(),getDummySnapData(),this)
         }
         return view
     }
@@ -29,6 +29,28 @@ class HomeFragment : Fragment(),LHOnClickListener {
     override fun onClick(o: Any) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
+
+    override fun onMoreClick(o: Any) {
+//        val fragmentTransaction = fragmentManager?.beginTransaction()
+//        fragmentTransaction?.add(R.id.container, MoreItemListFragment())
+//        fragmentTransaction?.commit()
+        replaceFragment(MoreItemListFragment())
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val backStateName = fragment.javaClass.name
+
+        val manager = fragmentManager
+        //val fragmentPopped:Boolean? = manager?.popBackStackImmediate(backStateName, 0)
+
+        //if (!fragmentPopped!!) { //fragment not in back stack, create it.
+            val ft = manager?.beginTransaction()
+            ft?.replace(R.id.container, fragment)
+            ft?.addToBackStack(backStateName)
+            ft?.commit()
+        //}
+    }
+
 
     private fun getDummySnapData():ArrayList<SnapItem>{
         val apps = getItems();

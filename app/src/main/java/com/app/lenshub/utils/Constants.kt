@@ -9,4 +9,7 @@ object Constants {
     val USER_NAME = "com.app.UserName"
     val USER_EMAIL = "com.app.UserEmail"
     val USER_PHOTO_URL = "com.app.UserPhotoURL"
+
+    val FRAGMENT_TYPE_MORE_ITEM = 1;
+    val FRAGMENT_TYPE_DETAIL = 1;
 }

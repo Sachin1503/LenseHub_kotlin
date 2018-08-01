@@ -8,12 +8,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.app.lenshub.Item
 import com.app.lenshub.R
+import com.app.lenshub.callback.LHOnClickListener
 
 
 // Created by app singh on 25/7/18.
 //Commit test
 
-class ItemAdapter(val list:ArrayList<Item>) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class ItemAdapter(private val list:ArrayList<Item>,private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_item_adapter,parent,false)
         return ItemViewHolder(view)
@@ -21,10 +22,16 @@ class ItemAdapter(val list:ArrayList<Item>) :RecyclerView.Adapter<RecyclerView.V
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val itemViewHolder:ItemViewHolder = holder as ItemViewHolder
-        itemViewHolder.bind(list.get(position))
+        bind(itemViewHolder,position)
     }
 
-
+    fun bind(itemViewHolder: ItemViewHolder,position: Int){
+        val item = list.get(position);
+        itemViewHolder.textViewName.text = item.name
+        itemViewHolder.textViewSize.text = item.size
+        itemViewHolder.imageViewAppPhoto.setImageResource(item.drawable)
+        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
+    }
 
     override fun getItemCount(): Int {
         return list.size
@@ -35,11 +42,6 @@ class ItemAdapter(val list:ArrayList<Item>) :RecyclerView.Adapter<RecyclerView.V
         val textViewSize:TextView = view.findViewById(R.id.textViewSize)
         val imageViewAppPhoto:ImageView = view.findViewById(R.id.imageView)
 
-        public fun bind(item:Item){
-            textViewName.text = item.name
-            textViewSize.text = item.size
-            imageViewAppPhoto.setImageResource(item.drawable)
-        }
     }
 
 }

@@ -11,11 +11,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.app.lenshub.R
 import com.app.lenshub.SnapItem
+import com.app.lenshub.callback.LHOnClickListener
 
 
 // Created by app singh on 23/7/18.
 
-public class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>, val lhOnClickListener: LHOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_snap_adapter,parent,false)
@@ -24,7 +25,18 @@ public class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>)
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val myHolder:MYViewHolder = holder as MYViewHolder
-        myHolder.bind(context,snapList.get(position))
+        bind(myHolder,position)
+    }
+
+    fun bind(myViewHolder: MYViewHolder,position: Int){
+        val snapItem = snapList.get(position);
+        myViewHolder.textViewTitle.text = snapItem.title
+        myViewHolder.recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        myViewHolder.recyclerView.adapter = ItemAdapter(snapItem.itemList,lhOnClickListener);
+        myViewHolder.recyclerView.onFlingListener =  null
+        val snapHelper:SnapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(myViewHolder.recyclerView)
+        myViewHolder.textViewMore.setOnClickListener{lhOnClickListener.onMoreClick(position)}
     }
 
     override fun getItemCount(): Int {
@@ -33,16 +45,10 @@ public class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>)
 
     class MYViewHolder(view :View) : RecyclerView.ViewHolder(view) {
         val textViewTitle :TextView = view.findViewById(R.id.textViewSnapTitle)
+        val textViewMore :TextView = view.findViewById(R.id.textViewMore)
         val recyclerView :RecyclerView = view.findViewById(R.id.recyclerViewSnap)
 
-        fun bind(context:Context,snapItem:SnapItem){
-            textViewTitle.text = snapItem.title
-            recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-            recyclerView.adapter = ItemAdapter(snapItem.itemList);
-            recyclerView.onFlingListener =  null
-            val snapHelper:SnapHelper = LinearSnapHelper()
-            snapHelper.attachToRecyclerView(recyclerView)
-        }
+
     }
 
 }

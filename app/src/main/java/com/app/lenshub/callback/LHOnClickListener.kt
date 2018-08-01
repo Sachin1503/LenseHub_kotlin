@@ -4,4 +4,5 @@ package com.app.lenshub.callback
 
 interface LHOnClickListener {
     fun onClick(o: Any)
+    fun onMoreClick(o: Any)
 }
