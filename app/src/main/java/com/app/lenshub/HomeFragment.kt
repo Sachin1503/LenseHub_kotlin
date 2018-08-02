@@ -4,14 +4,17 @@ package com.app.lenshub
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.app.lenshub.adapter.SpanAdapter
 
 import com.app.lenshub.callback.LHOnClickListener
+import com.app.lenshub.extensions.replaceFragment
 
 class HomeFragment : Fragment(),LHOnClickListener {
 
@@ -31,26 +34,8 @@ class HomeFragment : Fragment(),LHOnClickListener {
     }
 
     override fun onMoreClick(o: Any) {
-//        val fragmentTransaction = fragmentManager?.beginTransaction()
-//        fragmentTransaction?.add(R.id.container, MoreItemListFragment())
-//        fragmentTransaction?.commit()
-        replaceFragment(MoreItemListFragment())
+        fragmentManager?.replaceFragment(R.id.container,MoreItemListFragment())
     }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val backStateName = fragment.javaClass.name
-
-        val manager = fragmentManager
-        //val fragmentPopped:Boolean? = manager?.popBackStackImmediate(backStateName, 0)
-
-        //if (!fragmentPopped!!) { //fragment not in back stack, create it.
-            val ft = manager?.beginTransaction()
-            ft?.replace(R.id.container, fragment)
-            ft?.addToBackStack(backStateName)
-            ft?.commit()
-        //}
-    }
-
 
     private fun getDummySnapData():ArrayList<SnapItem>{
         val apps = getItems();
