@@ -11,6 +11,10 @@ import com.app.lenshub.R
 import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
 import android.util.DisplayMetrics
+import com.app.lenshub.utils.LHItemDecorator
+import com.app.lenshub.utils.ItemOffsetDecoration
+
+
 
 
 // Created by sachin singh on 3/8/18.
@@ -26,16 +30,11 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
     }
 
     private fun init(view: View){
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCategories)
-        val sColumnWidth = 120;
-        val spanCount = Math.floor((recyclerView.getWidth() / convertDPToPixels(sColumnWidth)).toDouble()).toInt()
-
-
         recyclerView.layoutManager = GridLayoutManager(context,calculateNoOfColumns())
+        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
+        recyclerView.addItemDecoration(itemDecoration)
         recyclerView.adapter = CategoriesAdapter(resources.getStringArray(R.array.category_array),this)
-
-
     }
 
     override fun onClick(o: Any) {
