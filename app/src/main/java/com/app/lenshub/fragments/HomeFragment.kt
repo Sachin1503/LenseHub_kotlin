@@ -1,22 +1,24 @@
-package com.app.lenshub
+package com.app.lenshub.fragments
 
 // Created by app singh on 19/7/18.
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.app.lenshub.Item
+import com.app.lenshub.R
+import com.app.lenshub.SnapItem
 import com.app.lenshub.adapter.SpanAdapter
-
 import com.app.lenshub.callback.LHOnClickListener
+
+import com.app.lenshub.callback.LHOnMoreClickListener
 import com.app.lenshub.extensions.replaceFragment
 
-class HomeFragment : Fragment(),LHOnClickListener {
+class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
@@ -24,7 +26,7 @@ class HomeFragment : Fragment(),LHOnClickListener {
             view.setHasFixedSize(true)
             val mLayoutManager = LinearLayoutManager(activity)
             view.layoutManager = mLayoutManager
-            view.adapter = SpanAdapter(requireContext(),getDummySnapData(),this)
+            view.adapter = SpanAdapter(requireContext(),getDummySnapData(),this,this)
         }
         return view
     }
@@ -34,7 +36,7 @@ class HomeFragment : Fragment(),LHOnClickListener {
     }
 
     override fun onMoreClick(o: Any) {
-        fragmentManager?.replaceFragment(R.id.container,MoreItemListFragment())
+        activity?.supportFragmentManager?.replaceFragment(R.id.container, MoreItemListFragment())
     }
 
     private fun getDummySnapData():ArrayList<SnapItem>{

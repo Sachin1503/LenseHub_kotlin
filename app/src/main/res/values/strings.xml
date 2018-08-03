@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">KotlinTestApp</string>
     <string name="welcome_to_lenshub">Welcome to TestApp</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_navigation">NavigationActivity</string>
@@ -9,5 +9,18 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+
+    <string-array name="category_array">
+        <item>Camera</item>
+        <item>Lens</item>
+        <item>Equipment</item>
+        <item>Lights</item>
+        <item>Audio/Sound</item>
+        <item>Flashes</item>
+        <item>Monitor/Screen</item>
+        <item>Cases and Bags</item>
+        <item>Filters</item>
+    </string-array>
 </resources>
 

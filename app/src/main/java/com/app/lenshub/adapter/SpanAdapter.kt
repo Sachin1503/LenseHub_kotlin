@@ -12,11 +12,12 @@ import android.widget.TextView
 import com.app.lenshub.R
 import com.app.lenshub.SnapItem
 import com.app.lenshub.callback.LHOnClickListener
+import com.app.lenshub.callback.LHOnMoreClickListener
 
 
 // Created by app singh on 23/7/18.
 
-class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>, val lhOnClickListener: LHOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>, val lhOnMoreClickListener: LHOnMoreClickListener, val lhOnClickListener: LHOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_snap_adapter,parent,false)
@@ -36,7 +37,7 @@ class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>, val lh
         myViewHolder.recyclerView.onFlingListener =  null
         val snapHelper:SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(myViewHolder.recyclerView)
-        myViewHolder.textViewMore.setOnClickListener{lhOnClickListener.onMoreClick(position)}
+        myViewHolder.textViewMore.setOnClickListener{lhOnMoreClickListener.onMoreClick(position)}
     }
 
     override fun getItemCount(): Int {

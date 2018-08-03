@@ -1,4 +1,4 @@
-package com.app.lenshub
+package com.app.lenshub.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,8 +7,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.app.lenshub.Item
+import com.app.lenshub.R
 import com.app.lenshub.adapter.ItemAdapter
 import com.app.lenshub.callback.LHOnClickListener
+import com.app.lenshub.callback.LHOnMoreClickListener
 
 
 // Created by sachin singh on 1/8/18.
@@ -74,6 +77,4 @@ class MoreItemListFragment:Fragment(),LHOnClickListener{
         }
     }
 
-    override fun onMoreClick(o: Any) {
-    }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="175dp"
+    android:layout_height="175dp"
+    android:orientation="vertical"
+    android:elevation="4dp"
+    android:layout_margin="4dp"
+    android:background="@color/colorWhite">
+
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/textViewCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="App Name"
+        android:textColor="@android:color/black" />
+
+
+</LinearLayout>

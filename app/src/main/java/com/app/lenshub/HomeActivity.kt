@@ -3,24 +3,17 @@ package com.app.lenshub
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.provider.SyncStateContract
-import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
-import com.app.lenshub.callback.LHOnClickListener
+import com.app.lenshub.extensions.replaceFragment
+import com.app.lenshub.fragments.CategoryFragment
+import com.app.lenshub.fragments.HomeFragment
 import com.app.lenshub.utils.Constants
 import com.quinny898.library.persistentsearch.SearchBox
 import com.quinny898.library.persistentsearch.SearchResult
@@ -86,13 +79,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.itemId
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container, HomeFragment())
-            fragmentTransaction.commit()
+
+            supportFragmentManager.replaceFragment(R.id.container,HomeFragment())
 
         } else if (id == R.id.nav_category) {
+
+            supportFragmentManager.replaceFragment(R.id.container,CategoryFragment())
 
         } else if (id == R.id.nav_nearme) {
 

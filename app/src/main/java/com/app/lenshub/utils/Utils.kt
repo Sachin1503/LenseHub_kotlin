@@ -7,7 +7,4 @@ import com.app.lenshub.R
 
 // Created by app singh on 20/7/18.
 
-class Utils {
 
-
-}
