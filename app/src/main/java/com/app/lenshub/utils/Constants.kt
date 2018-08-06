@@ -10,12 +10,8 @@ object Constants {
     const val USER_EMAIL = "com.app.UserEmail"
     const val USER_PHOTO_URL = "com.app.UserPhotoURL"
 
-<<<<<<< Updated upstream
-    const  val FRAGMENT_TYPE_MORE_ITEM = 1;
+    const val FRAGMENT_TYPE_MORE_ITEM = 1;
     const val FRAGMENT_TYPE_DETAIL = 1;
-=======
-    val FRAGMENT_TYPE_MORE_ITEM = 1;
-    val FRAGMENT_TYPE_DETAIL = 1;
 
     const val CATEGORY_TYPE_CAMERA = 1;
     const val CATEGORY_TYPE_LENS = 2;
@@ -26,5 +22,5 @@ object Constants {
     const val CATEGORY_TYPE_MONITORS = 7;
     const val CATEGORY_TYPE_CASES_BAGS = 8;
     const val CATEGORY_TYPE_FILTER = 9;
->>>>>>> Stashed changes
+
 }

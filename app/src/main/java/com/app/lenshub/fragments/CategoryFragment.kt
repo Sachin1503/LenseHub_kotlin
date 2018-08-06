@@ -11,11 +11,10 @@ import com.app.lenshub.R
 import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.utils.ItemOffsetDecoration
-<<<<<<< Updated upstream
-import com.app.lenshub.utils.Utils
-=======
+
+
 import com.app.lenshub.utils.MasterData
->>>>>>> Stashed changes
+import com.app.lenshub.utils.Utils
 
 
 // Created by sachin singh on 3/8/18.

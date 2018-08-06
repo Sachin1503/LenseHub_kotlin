@@ -13,7 +13,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-<<<<<<< Updated upstream
+
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
 import com.app.lenshub.extensions.replaceFragmentWithOutBackStack
 import com.app.lenshub.fragments.CategoryFragment
@@ -21,14 +21,8 @@ import com.app.lenshub.fragments.HomeFragment
 import com.app.lenshub.utils.Constants
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-=======
 import android.widget.Toast
-import com.app.lenshub.extensions.replaceFragment
-import com.app.lenshub.fragments.CategoryFragment
-import com.app.lenshub.fragments.HomeFragment
-import com.app.lenshub.utils.Constants
 import com.google.android.gms.auth.api.signin.GoogleSignIn
->>>>>>> Stashed changes
 import com.quinny898.library.persistentsearch.SearchBox
 import com.quinny898.library.persistentsearch.SearchResult
 import com.google.android.gms.auth.api.Auth
@@ -121,14 +115,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun updateNavigationHeaderView(navView:NavigationView){
         val headerView:View = navView.getHeaderView(0)
-<<<<<<< Updated upstream
         headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME,"")
         headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL,"")
         Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL,"")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
-=======
-        headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME,"Android")
-        headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL,"android@test.com")
->>>>>>> Stashed changes
     }
 
     class MyMenuListener(val drawer: DrawerLayout):SearchBox.MenuListener{

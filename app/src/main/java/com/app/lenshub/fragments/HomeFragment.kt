@@ -14,12 +14,10 @@ import com.app.lenshub.adapter.CategorySnapAdapter
 import com.app.lenshub.callback.LHOnClickListener
 
 import com.app.lenshub.callback.LHOnMoreClickListener
-<<<<<<< Updated upstream
+
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
-=======
-import com.app.lenshub.extensions.replaceFragment
 import com.app.lenshub.utils.MasterData
->>>>>>> Stashed changes
+
 
 class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
 

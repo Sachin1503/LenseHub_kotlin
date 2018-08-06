@@ -11,7 +11,7 @@ import com.app.lenshub.R
 
 fun FragmentManager.replaceFragmentWithBackStack(container: Int, fragment: Fragment){
     val manager = this
-    val ft = manager?.beginTransaction()
+    val ft = manager.beginTransaction()
     ft?.replace(container, fragment)
     ft?.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
     ft?.addToBackStack(null)
@@ -20,7 +20,7 @@ fun FragmentManager.replaceFragmentWithBackStack(container: Int, fragment: Fragm
 
 fun FragmentManager.replaceFragmentWithOutBackStack(container: Int, fragment: Fragment){
     val manager = this
-    val ft = manager?.beginTransaction()
+    val ft = manager.beginTransaction()
     ft?.replace(container, fragment)
     ft?.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
     ft?.commit()
