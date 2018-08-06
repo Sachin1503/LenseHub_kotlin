@@ -9,15 +9,14 @@ import android.widget.TextView
 import com.app.lenshub.Item
 import com.app.lenshub.R
 import com.app.lenshub.callback.LHOnClickListener
-import com.app.lenshub.callback.LHOnMoreClickListener
 
 
 // Created by app singh on 25/7/18.
 //Commit test
 
-class ItemAdapter(private val list:ArrayList<Item>,private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class ItemAdapterGrid(private val list:ArrayList<Item>, private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_item_adapter,parent,false)
+        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_item_adapter_grid,parent,false)
         return ItemViewHolder(view)
     }
 

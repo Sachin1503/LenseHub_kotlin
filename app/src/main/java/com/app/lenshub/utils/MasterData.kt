@@ -28,24 +28,62 @@ object MasterData{
         val apps = ArrayList<Item>()
 
         when (categoryType) {
-            Constants.CATEGORY_TYPE_CAMERA ->
+            Constants.CATEGORY_TYPE_CAMERA -> {
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_LENS ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_LIGHTS ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_EQUIPMENTS ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_FLASHES ->
+            }
+            Constants.CATEGORY_TYPE_LENS ->{
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_AUDIO_SOUND ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_MONITORS ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_CASES_BAGS ->
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-            Constants.CATEGORY_TYPE_FILTER ->
+            }
+            Constants.CATEGORY_TYPE_LIGHTS ->{
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+            Constants.CATEGORY_TYPE_EQUIPMENTS ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+            Constants.CATEGORY_TYPE_FLASHES ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+            Constants.CATEGORY_TYPE_AUDIO_SOUND ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+            Constants.CATEGORY_TYPE_MONITORS ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+
+            Constants.CATEGORY_TYPE_CASES_BAGS ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+            Constants.CATEGORY_TYPE_FILTER ->{
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+            }
+
         }
         return apps
     }

@@ -3,13 +3,15 @@ package com.app.lenshub.fragments
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.app.lenshub.Item
 import com.app.lenshub.R
-import com.app.lenshub.adapter.ItemAdapter
+import com.app.lenshub.adapter.ItemAdapterGrid
+import com.app.lenshub.adapter.ItemAdapterList
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.utils.ItemOffsetDecoration
 import com.app.lenshub.utils.Utils
@@ -28,10 +30,10 @@ class MoreItemListFragment:Fragment(),LHOnClickListener{
     private fun init(view: View){
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMoreItem)
-        recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
-        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset_4_dp)
         recyclerView.addItemDecoration(itemDecoration)
-        recyclerView.adapter = ItemAdapter(getItems(),this)
+        recyclerView.adapter = ItemAdapterList(getItems(),this)
     }
 
     private fun getItems(): ArrayList<Item> {

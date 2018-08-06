@@ -33,7 +33,7 @@ class CategorySnapAdapter(val context: Context, private val snapList:ArrayList<C
         val snapItem = snapList.get(position);
         myViewHolder.textViewTitle.text = snapItem.title
         myViewHolder.recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        myViewHolder.recyclerView.adapter = ItemAdapter(snapItem.itemList,lhOnClickListener);
+        myViewHolder.recyclerView.adapter = ItemAdapterGrid(snapItem.itemList,lhOnClickListener);
         myViewHolder.recyclerView.onFlingListener =  null
         val snapHelper:SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(myViewHolder.recyclerView)

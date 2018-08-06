@@ -17,9 +17,9 @@ import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
-class SignInActivity : AppCompatActivity(), View.OnClickListener {
+open class SignInActivity : AppCompatActivity(), View.OnClickListener {
     private var btnSignInButton: SignInButton? = null
-    private var mGoogleSignInClient: GoogleSignInClient? = null
+    var mGoogleSignInClient: GoogleSignInClient? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
