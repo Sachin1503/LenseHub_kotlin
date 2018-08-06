@@ -11,7 +11,11 @@ import com.app.lenshub.R
 import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.utils.ItemOffsetDecoration
+<<<<<<< Updated upstream
 import com.app.lenshub.utils.Utils
+=======
+import com.app.lenshub.utils.MasterData
+>>>>>>> Stashed changes
 
 
 // Created by sachin singh on 3/8/18.
@@ -31,10 +35,10 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
         recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
         val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
         recyclerView.addItemDecoration(itemDecoration)
-        recyclerView.adapter = CategoriesAdapter(resources.getStringArray(R.array.category_array),this)
+        recyclerView.adapter = CategoriesAdapter(MasterData.getCategoryData(),this)
     }
 
     override fun onClick(o: Any) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 }

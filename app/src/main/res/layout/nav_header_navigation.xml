@@ -30,8 +30,35 @@
 
     <TextView
         android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <TextView
+            android:id="@+id/textViewCity"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "Bangalore"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/btnEdit"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textStyle="bold"
+            android:gravity="right"
+            />
+
+    </LinearLayout>
+
 
 </LinearLayout>

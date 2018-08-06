@@ -10,14 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.app.lenshub.R
-import com.app.lenshub.SnapItem
+import com.app.lenshub.Category
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.callback.LHOnMoreClickListener
 
 
 // Created by app singh on 23/7/18.
 
-class SpanAdapter(val context: Context, val snapList:ArrayList<SnapItem>, val lhOnMoreClickListener: LHOnMoreClickListener, val lhOnClickListener: LHOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CategorySnapAdapter(val context: Context, private val snapList:ArrayList<Category>, private val lhOnMoreClickListener: LHOnMoreClickListener, private val lhOnClickListener: LHOnClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_snap_adapter,parent,false)

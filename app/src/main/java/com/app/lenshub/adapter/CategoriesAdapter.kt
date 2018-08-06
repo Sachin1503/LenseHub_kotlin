@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.app.lenshub.Item
+import com.app.lenshub.Category
 import com.app.lenshub.R
 import com.app.lenshub.callback.LHOnClickListener
-import com.app.lenshub.callback.LHOnMoreClickListener
 
 
 //Created by app singh on 25/7/18.
 //Commit test
 
-class CategoriesAdapter(private val list:Array<String>,private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class CategoriesAdapter(private val list:ArrayList<Category>,private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_category_adapter,parent,false)
         return CategoryViewHolder(view)
@@ -26,9 +25,9 @@ class CategoriesAdapter(private val list:Array<String>,private val lhOnClickList
     }
 
     fun bind(itemViewHolder: CategoryViewHolder,position: Int){
-        val item = list.get(position);
-        itemViewHolder.textViewName.text = item
-        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
+        val category = list.get(position);
+        itemViewHolder.textViewName.text = category.title
+        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(category)}
     }
 
     override fun getItemCount(): Int {
