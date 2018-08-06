@@ -28,7 +28,7 @@ class ItemAdapterGrid(private val list:ArrayList<Item>, private val lhOnClickLis
     fun bind(itemViewHolder: ItemViewHolder,position: Int){
         val item = list.get(position);
         itemViewHolder.textViewName.text = item.name
-        itemViewHolder.textViewSize.text = item.size
+        itemViewHolder.textViewSize.text = item.price
         itemViewHolder.imageViewAppPhoto.setImageResource(item.drawable)
         itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
     }

@@ -28,7 +28,7 @@ class ItemAdapterList(private val list:ArrayList<Item>, private val lhOnClickLis
     fun bind(itemViewHolder: ItemViewHolder,position: Int){
         val item = list.get(position);
         itemViewHolder.textViewName.text = item.name
-        itemViewHolder.textViewPrice.text = item.size
+        itemViewHolder.textViewPrice.text = item.price
         itemViewHolder.imageViewAppPhoto.setImageResource(item.drawable)
         itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
     }
