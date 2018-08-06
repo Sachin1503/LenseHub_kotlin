@@ -1,8 +1,8 @@
 package com.app.lenshub.utils
 
-import com.app.lenshub.Item
+import com.app.lenshub.model.Item
 import com.app.lenshub.R
-import com.app.lenshub.Category
+import com.app.lenshub.model.Category
 
 
 // Created by sachin singh on 6/8/18.

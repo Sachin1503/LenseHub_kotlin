@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.app.lenshub.R
-import com.app.lenshub.Category
+import com.app.lenshub.model.Category
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.callback.LHOnMoreClickListener
 

@@ -1,4 +1,4 @@
-package com.app.lenshub
+package com.app.lenshub.model
 
 
 // Created by app singh on 25/7/18.
