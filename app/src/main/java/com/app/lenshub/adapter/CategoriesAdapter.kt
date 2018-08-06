@@ -11,7 +11,7 @@ import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.callback.LHOnMoreClickListener
 
 
-// Created by app singh on 25/7/18.
+//Created by app singh on 25/7/18.
 //Commit test
 
 class CategoriesAdapter(private val list:Array<String>,private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){

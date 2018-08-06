@@ -10,11 +10,8 @@ import android.view.ViewGroup
 import com.app.lenshub.R
 import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
-import android.util.DisplayMetrics
-import com.app.lenshub.utils.LHItemDecorator
 import com.app.lenshub.utils.ItemOffsetDecoration
-
-
+import com.app.lenshub.utils.Utils
 
 
 // Created by sachin singh on 3/8/18.
@@ -31,7 +28,7 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
 
     private fun init(view: View){
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCategories)
-        recyclerView.layoutManager = GridLayoutManager(context,calculateNoOfColumns())
+        recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
         val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
         recyclerView.addItemDecoration(itemDecoration)
         recyclerView.adapter = CategoriesAdapter(resources.getStringArray(R.array.category_array),this)
@@ -40,18 +37,4 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
     override fun onClick(o: Any) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-    fun calculateNoOfColumns(): Int {
-        val displayMetrics = context?.getResources()?.getDisplayMetrics()
-        val dpWidth = displayMetrics!!.widthPixels / displayMetrics.density
-        return (dpWidth / 180).toInt()
-    }
-    private fun convertDPToPixels(dp: Int): Float {
-        val metrics = DisplayMetrics()
-        activity?.getWindowManager()?.defaultDisplay?.getMetrics(metrics)
-        val logicalDensity = metrics.density
-        return dp * logicalDensity
-    }
-
-
 }

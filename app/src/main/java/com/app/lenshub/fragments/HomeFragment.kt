@@ -16,7 +16,7 @@ import com.app.lenshub.adapter.SpanAdapter
 import com.app.lenshub.callback.LHOnClickListener
 
 import com.app.lenshub.callback.LHOnMoreClickListener
-import com.app.lenshub.extensions.replaceFragment
+import com.app.lenshub.extensions.replaceFragmentWithBackStack
 
 class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
 
@@ -36,7 +36,7 @@ class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
     }
 
     override fun onMoreClick(o: Any) {
-        activity?.supportFragmentManager?.replaceFragment(R.id.container, MoreItemListFragment())
+        activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container, MoreItemListFragment())
     }
 
     private fun getDummySnapData():ArrayList<SnapItem>{

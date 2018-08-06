@@ -2,6 +2,7 @@ package com.app.lenshub
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -10,11 +11,15 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
-import com.app.lenshub.extensions.replaceFragment
+import com.app.lenshub.extensions.replaceFragmentWithBackStack
+import com.app.lenshub.extensions.replaceFragmentWithOutBackStack
 import com.app.lenshub.fragments.CategoryFragment
 import com.app.lenshub.fragments.HomeFragment
 import com.app.lenshub.utils.Constants
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.quinny898.library.persistentsearch.SearchBox
 import com.quinny898.library.persistentsearch.SearchResult
 
@@ -43,6 +48,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         search.enableVoiceRecognition(this)
         search.setSearchListener(MySearchListener())
         search.setLogoText(resources.getString(R.string.app_name))
+        supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,HomeFragment())
 
     }
 
@@ -80,11 +86,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         if (id == R.id.nav_home) {
 
-            supportFragmentManager.replaceFragment(R.id.container,HomeFragment())
+            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,HomeFragment())
 
         } else if (id == R.id.nav_category) {
 
-            supportFragmentManager.replaceFragment(R.id.container,CategoryFragment())
+            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,CategoryFragment())
 
         } else if (id == R.id.nav_nearme) {
 
@@ -101,6 +107,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val headerView:View = navView.getHeaderView(0)
         headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME,"")
         headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL,"")
+        Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL,"")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
     }
 
     class MyMenuListener(val drawer: DrawerLayout):SearchBox.MenuListener{

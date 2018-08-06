@@ -5,11 +5,11 @@ package com.app.lenshub.utils
 object Constants {
     val SHARE_PREFERENCE_FILE = "com.app.SharePrefFile"
 
-    val USER_ID = "com.app.UserEnd"
-    val USER_NAME = "com.app.UserName"
-    val USER_EMAIL = "com.app.UserEmail"
-    val USER_PHOTO_URL = "com.app.UserPhotoURL"
+    const val USER_ID = "com.app.UserEnd"
+    const val USER_NAME = "com.app.UserName"
+    const val USER_EMAIL = "com.app.UserEmail"
+    const val USER_PHOTO_URL = "com.app.UserPhotoURL"
 
-    val FRAGMENT_TYPE_MORE_ITEM = 1;
-    val FRAGMENT_TYPE_DETAIL = 1;
+    const  val FRAGMENT_TYPE_MORE_ITEM = 1;
+    const val FRAGMENT_TYPE_DETAIL = 1;
 }

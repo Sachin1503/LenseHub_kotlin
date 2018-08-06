@@ -89,7 +89,8 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
             editor.putString(Constants.USER_ID,googleSignInAccount.id)
             editor.putString(Constants.USER_NAME,googleSignInAccount.displayName)
             editor.putString(Constants.USER_EMAIL,googleSignInAccount.email)
-            editor.putString(Constants.USER_PHOTO_URL, googleSignInAccount.photoUrl!!.path)
+            editor.putString(Constants.USER_PHOTO_URL, googleSignInAccount.photoUrl.toString())
+            editor.apply()
 
             val homeIntent = Intent()
             homeIntent.setClass(this, HomeActivity::class.java)

@@ -11,7 +11,8 @@ import com.app.lenshub.Item
 import com.app.lenshub.R
 import com.app.lenshub.adapter.ItemAdapter
 import com.app.lenshub.callback.LHOnClickListener
-import com.app.lenshub.callback.LHOnMoreClickListener
+import com.app.lenshub.utils.ItemOffsetDecoration
+import com.app.lenshub.utils.Utils
 
 
 // Created by sachin singh on 1/8/18.
@@ -24,9 +25,12 @@ class MoreItemListFragment:Fragment(),LHOnClickListener{
         return view;
     }
 
-    fun init(view: View){
+    private fun init(view: View){
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMoreItem)
-        recyclerView.layoutManager = GridLayoutManager(activity,3)
+        recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
+        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
+        recyclerView.addItemDecoration(itemDecoration)
         recyclerView.adapter = ItemAdapter(getItems(),this)
     }
 
