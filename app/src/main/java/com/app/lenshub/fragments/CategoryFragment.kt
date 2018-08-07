@@ -7,9 +7,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.app.lenshub.HomeActivity
 import com.app.lenshub.R
 import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
+import com.app.lenshub.extensions.replaceFragmentWithBackStack
+import com.app.lenshub.model.Category
 import com.app.lenshub.utils.ItemOffsetDecoration
 
 
@@ -38,6 +41,10 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
     }
 
     override fun onClick(o: Any) {
-
+        if (activity is HomeActivity){
+            val homeActivity  = activity as HomeActivity
+            homeActivity.setCategory(o as Category)
+            activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container, MoreItemListFragment())
+        }
     }
 }

@@ -22,6 +22,9 @@ import com.app.lenshub.utils.Constants
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import android.widget.Toast
+import android.widget.Toolbar
+import com.app.lenshub.fragments.ProfileFragment
+import com.app.lenshub.model.Category
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.quinny898.library.persistentsearch.SearchBox
 import com.quinny898.library.persistentsearch.SearchResult
@@ -32,9 +35,10 @@ import com.google.android.gms.common.api.ResultCallback
 import com.google.android.gms.common.api.Status
 
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private var sharePreference:SharedPreferences? = null
+    private var sharePreference: SharedPreferences? = null
+    private var category: Category? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,21 +46,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         init()
     }
 
-    private fun init(){
+    private fun init() {
 
-        sharePreference  = getSharedPreferences(Constants.SHARE_PREFERENCE_FILE, Context.MODE_PRIVATE)
+        sharePreference = getSharedPreferences(Constants.SHARE_PREFERENCE_FILE, Context.MODE_PRIVATE)
 
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
         updateNavigationHeaderView(navigationView)
 
-        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
         val search = findViewById<SearchBox>(R.id.searchbox)
-        search.setMenuListener(MyMenuListener(drawer))
+        search.setMenuListener { handleDrawer() }
         search.enableVoiceRecognition(this)
         search.setSearchListener(MySearchListener())
         search.setLogoText(resources.getString(R.string.app_name))
-        supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,HomeFragment())
+        supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, HomeFragment())
 
     }
 
@@ -94,15 +97,15 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         if (id == R.id.nav_home) {
 
-            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,HomeFragment())
+            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, HomeFragment())
 
         } else if (id == R.id.nav_category) {
 
-            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container,CategoryFragment())
+            supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, CategoryFragment())
 
         } else if (id == R.id.nav_nearme) {
 
-            Toast.makeText(this,"Feature is not implemented", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
 
         } else if (id == R.id.nav_logout) {
             finish()
@@ -113,25 +116,36 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun updateNavigationHeaderView(navView:NavigationView){
-        val headerView:View = navView.getHeaderView(0)
-        headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME,"")
-        headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL,"")
-        Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL,"")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
-    }
-
-    class MyMenuListener(val drawer: DrawerLayout):SearchBox.MenuListener{
-        override fun onMenuClick() {
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-                drawer.closeDrawer(GravityCompat.START)
-            } else {
-                drawer.openDrawer(GravityCompat.START)
-            }
+    private fun updateNavigationHeaderView(navView: NavigationView) {
+        val headerView: View = navView.getHeaderView(0)
+        headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME, "")
+        headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL, "")
+        Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL, "")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
+        headerView.findViewById<TextView>(R.id.textViewEdit).setOnClickListener {
+            supportFragmentManager.replaceFragmentWithBackStack(R.id.container, ProfileFragment())
+            handleDrawer()
         }
-
     }
 
-    class MySearchListener:SearchBox.SearchListener{
+    private fun handleDrawer(){
+        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+            drawer.openDrawer(GravityCompat.START)
+        }
+    }
+
+    fun setCategory(category: Category) {
+        this.category = category
+    }
+
+    fun getCategory(): Category {
+        return category!!
+    }
+
+
+    class MySearchListener : SearchBox.SearchListener {
         override fun onSearchOpened() {
         }
 

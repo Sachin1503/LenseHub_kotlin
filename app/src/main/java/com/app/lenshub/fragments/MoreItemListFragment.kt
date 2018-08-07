@@ -7,11 +7,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.app.lenshub.HomeActivity
 import com.app.lenshub.model.Item
 import com.app.lenshub.R
 import com.app.lenshub.adapter.ItemAdapterList
 import com.app.lenshub.callback.LHOnClickListener
-import com.app.lenshub.utils.ItemOffsetDecoration
+import android.support.v7.widget.DividerItemDecoration
 
 
 // Created by sachin singh on 1/8/18.
@@ -28,56 +30,26 @@ class MoreItemListFragment:Fragment(),LHOnClickListener{
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewMoreItem)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset_4_dp)
-        recyclerView.addItemDecoration(itemDecoration)
+        recyclerView.addItemDecoration(DividerItemDecoration(context,
+                DividerItemDecoration.VERTICAL))
         recyclerView.adapter = ItemAdapterList(getItems(),this)
     }
 
     private fun getItems(): ArrayList<Item> {
-        val apps = ArrayList<Item>()
-        apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
-        apps.add(Item("Gmail", R.drawable.ic_gmail_48dp, "4.8"))
-        apps.add(Item("Inbox", R.drawable.ic_inbox_48dp, "4.5"))
-        apps.add(Item("Google Keep", R.drawable.ic_keep_48dp, "4.2"))
-        apps.add(Item("Google Drive", R.drawable.ic_drive_48dp, "4.6"))
-        apps.add(Item("Hangouts", R.drawable.ic_hangouts_48dp, "39"))
-        apps.add(Item("Google Photos", R.drawable.ic_photos_48dp, "4.6"))
-        apps.add(Item("Messenger", R.drawable.ic_messenger_48dp, "4.2"))
-        apps.add(Item("Sheets", R.drawable.ic_sheets_48dp, "4.2"))
-        apps.add(Item("Slides", R.drawable.ic_slides_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Gmail", R.drawable.ic_gmail_48dp, "4.8"))
-        apps.add(Item("Inbox", R.drawable.ic_inbox_48dp, "4.5"))
-        apps.add(Item("Google Keep", R.drawable.ic_keep_48dp, "4.2"))
-        apps.add(Item("Google Drive", R.drawable.ic_drive_48dp, "4.6"))
-        apps.add(Item("Hangouts", R.drawable.ic_hangouts_48dp, "39"))
-        apps.add(Item("Google Photos", R.drawable.ic_photos_48dp, "4.6"))
-        apps.add(Item("Messenger", R.drawable.ic_messenger_48dp, "4.2"))
-        apps.add(Item("Sheets", R.drawable.ic_sheets_48dp, "4.2"))
-        apps.add(Item("Slides", R.drawable.ic_slides_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        apps.add(Item("Docs", R.drawable.ic_docs_48dp, "4.2"))
-        return apps
+
+        var items = ArrayList<Item>()
+
+        if (activity is HomeActivity){
+            val homeActivity = activity as HomeActivity
+            items = homeActivity.getCategory().itemList
+            return items
+        }
+
+        return items
     }
 
     override fun onClick(o: Any) {
-
-        val fragment = MoreItemListFragment();
-        val backStateName = fragment.javaClass.name
-
-        val manager = fragmentManager
-        val fragmentPopped:Boolean? = manager?.popBackStackImmediate(backStateName, 0)
-
-        if (!fragmentPopped!!) { //fragment not in back stack, create it.
-            val ft = manager.beginTransaction()
-            ft.replace(R.id.container, fragment)
-            ft.addToBackStack(backStateName)
-            ft.commit()
-        }
+        Toast.makeText(activity,getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
     }
 
 }

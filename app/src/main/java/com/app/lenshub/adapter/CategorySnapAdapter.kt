@@ -30,14 +30,14 @@ class CategorySnapAdapter(val context: Context, private val snapList:ArrayList<C
     }
 
     fun bind(myViewHolder: MYViewHolder,position: Int){
-        val snapItem = snapList.get(position);
-        myViewHolder.textViewTitle.text = snapItem.title
+        val category = snapList.get(position);
+        myViewHolder.textViewTitle.text = category.title
         myViewHolder.recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        myViewHolder.recyclerView.adapter = ItemAdapterGrid(snapItem.itemList,lhOnClickListener);
+        myViewHolder.recyclerView.adapter = ItemAdapterGrid(category.itemList,lhOnClickListener);
         myViewHolder.recyclerView.onFlingListener =  null
         val snapHelper:SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(myViewHolder.recyclerView)
-        myViewHolder.textViewMore.setOnClickListener{lhOnMoreClickListener.onMoreClick(position)}
+        myViewHolder.textViewMore.setOnClickListener{lhOnMoreClickListener.onMoreClick(category)}
     }
 
     override fun getItemCount(): Int {
@@ -48,8 +48,6 @@ class CategorySnapAdapter(val context: Context, private val snapList:ArrayList<C
         val textViewTitle :TextView = view.findViewById(R.id.textViewSnapTitle)
         val textViewMore :TextView = view.findViewById(R.id.textViewMore)
         val recyclerView :RecyclerView = view.findViewById(R.id.recyclerViewSnap)
-
-
     }
 
 }

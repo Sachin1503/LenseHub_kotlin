@@ -33,6 +33,8 @@ object MasterData{
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
+                apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))
             }
             Constants.CATEGORY_TYPE_LENS ->{
                 apps.add(Item("Google+", R.drawable.ic_google_48dp, "4.6"))

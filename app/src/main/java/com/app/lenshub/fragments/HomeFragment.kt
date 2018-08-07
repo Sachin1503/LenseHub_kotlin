@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.app.lenshub.HomeActivity
 import com.app.lenshub.R
 import com.app.lenshub.adapter.CategorySnapAdapter
 import com.app.lenshub.callback.LHOnClickListener
@@ -16,6 +18,7 @@ import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.callback.LHOnMoreClickListener
 
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
+import com.app.lenshub.model.Category
 import com.app.lenshub.utils.MasterData
 
 
@@ -33,11 +36,15 @@ class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
     }
 
     override fun onClick(o: Any) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(activity,getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
     }
 
     override fun onMoreClick(o: Any) {
-        activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container, MoreItemListFragment())
+        if (activity is HomeActivity){
+            val homeActivity  = activity as HomeActivity
+            homeActivity.setCategory(o as Category)
+            activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container, MoreItemListFragment())
+        }
     }
 
 

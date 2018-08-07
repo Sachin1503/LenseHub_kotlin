@@ -27,7 +27,9 @@ class CategoriesAdapter(private val list:ArrayList<Category>, private val lhOnCl
     fun bind(itemViewHolder: CategoryViewHolder,position: Int){
         val category = list.get(position);
         itemViewHolder.textViewName.text = category.title
-        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(category)}
+        itemViewHolder.itemView.setOnClickListener{
+            lhOnClickListener.onClick(category)
+        }
     }
 
     override fun getItemCount(): Int {
