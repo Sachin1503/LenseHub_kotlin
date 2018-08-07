@@ -35,7 +35,7 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
     private fun init(view: View){
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCategories)
         recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
-        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset)
+        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset_4_dp)
         recyclerView.addItemDecoration(itemDecoration)
         recyclerView.adapter = CategoriesAdapter(MasterData.getCategoryData(),this)
     }
