@@ -13,9 +13,7 @@ import com.app.lenshub.adapter.CategoriesAdapter
 import com.app.lenshub.callback.LHOnClickListener
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
 import com.app.lenshub.model.Category
-import com.app.lenshub.utils.ItemOffsetDecoration
-
-
+import com.app.lenshub.utils.EqualSpacingItemDecoration
 import com.app.lenshub.utils.MasterData
 import com.app.lenshub.utils.Utils
 
@@ -35,9 +33,9 @@ class CategoryFragment : Fragment() ,LHOnClickListener{
     private fun init(view: View){
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCategories)
         recyclerView.layoutManager = GridLayoutManager(context,Utils.calculateNoOfColumns(context!!)+1)
-        val itemDecoration = ItemOffsetDecoration(context!!, R.dimen.item_offset_4_dp)
-        recyclerView.addItemDecoration(itemDecoration)
+        recyclerView.addItemDecoration(EqualSpacingItemDecoration(resources.getDimension(R.dimen.item_offset_2).toInt(),EqualSpacingItemDecoration.GRID))
         recyclerView.adapter = CategoriesAdapter(MasterData.getCategoryData(),this)
+
     }
 
     override fun onClick(o: Any) {
