@@ -161,4 +161,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    fun hideActionBar(isHide:Boolean){
+
+    }
+
 }
