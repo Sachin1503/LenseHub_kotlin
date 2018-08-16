@@ -1,18 +1,19 @@
 package com.app.lenshub
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
 import com.app.lenshub.extensions.replaceFragmentWithOutBackStack
@@ -21,8 +22,6 @@ import com.app.lenshub.fragments.HomeFragment
 import com.app.lenshub.utils.Constants
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import android.widget.Toast
-import android.widget.Toolbar
 import com.app.lenshub.fragments.ProfileFragment
 import com.app.lenshub.model.Category
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -39,6 +38,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private var sharePreference: SharedPreferences? = null
     private var category: Category? = null
+    private var menuSearch:MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,11 +54,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
         updateNavigationHeaderView(navigationView)
 
-        val search = findViewById<SearchBox>(R.id.searchbox)
-        search.setMenuListener { handleDrawer() }
-        search.enableVoiceRecognition(this)
-        search.setSearchListener(MySearchListener())
-        search.setLogoText(resources.getString(R.string.app_name))
+        val toolbar = findViewById<android.support.v7.widget.Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val toogle = ActionBarDrawerToggle(this,findViewById(R.id.drawer_layout),toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close)
+        toogle.syncState()
+
         supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, HomeFragment())
 
     }
@@ -75,6 +76,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.navigation, menu)
+        menuSearch = menu.findItem(R.id.action_search)
         return true
     }
 
@@ -85,10 +87,51 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.itemId
 
 
-        return if (id == R.id.action_settings) {
-            true
+        return if (id == R.id.action_search) {
+            launchSearchActivity()
+            return true
         } else super.onOptionsItemSelected(item)
 
+    }
+
+
+    private fun updateNavigationHeaderView(navView: NavigationView) {
+        val headerView: View = navView.getHeaderView(0)
+        headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME, "")
+        headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL, "")
+        Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL, "")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
+        headerView.findViewById<TextView>(R.id.textViewEdit).setOnClickListener {
+            supportFragmentManager.replaceFragmentWithBackStack(R.id.container, ProfileFragment())
+            handelVisibilityOfSearch(false)
+            handleDrawer()
+        }
+    }
+
+    private fun handleDrawer(){
+        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+            drawer.openDrawer(GravityCompat.START)
+        }
+    }
+
+    private fun launchSearchActivity(){
+        val intent = Intent()
+        intent.setClass(this,SearchActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun handelVisibilityOfSearch(isVisible:Boolean){
+        menuSearch?.isVisible = isVisible
+    }
+
+    fun setCategory(category: Category) {
+        this.category = category
+    }
+
+    fun getCategory(): Category {
+        return category!!
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -98,10 +141,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (id == R.id.nav_home) {
 
             supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, HomeFragment())
+            handelVisibilityOfSearch(true)
 
         } else if (id == R.id.nav_category) {
 
             supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, CategoryFragment())
+            handelVisibilityOfSearch(false)
 
         } else if (id == R.id.nav_nearme) {
 
@@ -116,53 +161,4 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun updateNavigationHeaderView(navView: NavigationView) {
-        val headerView: View = navView.getHeaderView(0)
-        headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME, "")
-        headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL, "")
-        Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL, "")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
-        headerView.findViewById<TextView>(R.id.textViewEdit).setOnClickListener {
-            supportFragmentManager.replaceFragmentWithBackStack(R.id.container, ProfileFragment())
-            handleDrawer()
-        }
-    }
-
-    private fun handleDrawer(){
-        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            drawer.openDrawer(GravityCompat.START)
-        }
-    }
-
-    fun setCategory(category: Category) {
-        this.category = category
-    }
-
-    fun getCategory(): Category {
-        return category!!
-    }
-
-
-    class MySearchListener : SearchBox.SearchListener {
-        override fun onSearchOpened() {
-        }
-
-        override fun onSearchCleared() {
-        }
-
-        override fun onSearchClosed() {
-        }
-
-        override fun onSearchTermChanged(term: String?) {
-        }
-
-        override fun onSearch(result: String?) {
-        }
-
-        override fun onResultClick(result: SearchResult?) {
-        }
-
-    }
 }

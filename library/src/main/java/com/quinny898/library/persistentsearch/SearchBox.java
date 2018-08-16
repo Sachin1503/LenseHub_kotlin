@@ -42,6 +42,8 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.balysv.materialmenu.ps.MaterialMenuDrawable.IconState;
 import com.balysv.materialmenu.ps.MaterialMenuView;
+import com.nineoldandroids.animation.Animator;
+import com.nineoldandroids.animation.AnimatorListenerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,13 +131,14 @@ public class SearchBox extends RelativeLayout {
 
 			@Override
 			public void onClick(View v) {
-				if (searchOpen) {
+				/*if (searchOpen) {
 
 					toggleSearch();
 				} else {
 					if (menuListener != null)
 						menuListener.onMenuClick();
-				}
+				}*/
+				menuListener.onMenuClick();
 			}
 
 		});
@@ -201,6 +204,8 @@ public class SearchBox extends RelativeLayout {
 				popupMenu.show();
 			}
 		});
+
+
 
 		search.addTextChangedListener(new TextWatcher() {
 
@@ -845,10 +850,10 @@ public class SearchBox extends RelativeLayout {
 	
 
 	private void closeSearch() {
-        if(animateDrawerLogo){
+        /*if(animateDrawerLogo){
             this.materialMenu.animateState(IconState.BURGER);
             this.drawerLogo.setVisibility(View.VISIBLE);
-        }
+        }*/
 		this.logo.setVisibility(View.VISIBLE);
 		this.search.setVisibility(View.GONE);
 		this.results.setVisibility(View.GONE);
@@ -1007,5 +1012,7 @@ public class SearchBox extends RelativeLayout {
 		 */
 		public boolean onFilter(SearchResult searchResult ,String searchTerm);
 	}
+
+
 
 }
