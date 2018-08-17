@@ -26,7 +26,8 @@
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name" />
+                android:hint="Name"
+                android:enabled="false"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -39,7 +40,8 @@
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email" />
+                android:hint="Email"
+                android:enabled="false"/>
 
         </android.support.design.widget.TextInputLayout>
 

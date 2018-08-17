@@ -17,6 +17,10 @@
             android:icon="@drawable/ic_near_me_black_24dp"
             android:title="NearBy" />
         <item
+            android:id="@+id/nav_upload"
+            android:icon="@drawable/ic_cloud_upload_black_24dp"
+            android:title="Upload" />
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout_black_24dp"
             android:title="Logout" />

@@ -44,7 +44,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var category: Category? = null
     private var menuSearch: MenuItem? = null
     private var toolbar: Toolbar? = null;
-    private val toogle: ActionBarDrawerToggle? = null
     private var mToolBarNavigationListenerIsRegistered = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,6 +122,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val headerView: View = navView.getHeaderView(0)
         headerView.findViewById<TextView>(R.id.textViewName).text = sharePreference?.getString(Constants.USER_NAME, "")
         headerView.findViewById<TextView>(R.id.textViewEmail).text = sharePreference?.getString(Constants.USER_EMAIL, "")
+        headerView.findViewById<TextView>(R.id.textViewCity).text = sharePreference?.getString(Constants.USER_CITY, "")
         Glide.with(this).load(sharePreference?.getString(Constants.USER_PHOTO_URL, "")).apply(RequestOptions.circleCropTransform()).into(headerView.findViewById<ImageView>(R.id.imageViewPhoto))
         headerView.findViewById<TextView>(R.id.textViewEdit).setOnClickListener {
             supportFragmentManager.replaceFragmentWithBackStack(R.id.container, ProfileFragment())
@@ -173,6 +173,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             handelVisibilityOfSearch(false)
 
         } else if (id == R.id.nav_nearme) {
+
+            Toast.makeText(this, getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
+
+        } else if (id == R.id.nav_upload) {
 
             Toast.makeText(this, getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
 

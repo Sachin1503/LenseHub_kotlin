@@ -1,6 +1,8 @@
 package com.app.lenshub.adapter
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +11,19 @@ import android.widget.TextView
 import com.app.lenshub.model.Item
 import com.app.lenshub.R
 import com.app.lenshub.callback.LHOnClickListener
+import com.bumptech.glide.Glide
 
 
 // Created by app singh on 25/7/18.
 //Commit test
 
 class ItemAdapterList(private val list:ArrayList<Item>, private val lhOnClickListener: LHOnClickListener) :RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+
+    var contex:Context? = null;
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_item_adapter_list,parent,false)
+        contex = parent.context
         return ItemViewHolder(view)
     }
 
@@ -29,7 +36,9 @@ class ItemAdapterList(private val list:ArrayList<Item>, private val lhOnClickLis
         val item = list.get(position);
         itemViewHolder.textViewName.text = item.name
         itemViewHolder.textViewPrice.text = item.price
-        itemViewHolder.imageViewAppPhoto.setImageResource(item.drawable)
+        itemViewHolder.textViewAddress.text = item.address
+        itemViewHolder.textViewBrand.text = item.brand
+        Glide.with(contex!!).load(item.drawable).into( itemViewHolder.imageViewAppPhoto)
         itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
     }
 

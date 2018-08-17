@@ -35,6 +35,15 @@ open class SignInActivity : AppCompatActivity(), View.OnClickListener {
                 .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
         btnSignInButton!!.setOnClickListener(this)
+
+        val sharedPreferences = getSharedPreferences(Constants.SHARE_PREFERENCE_FILE, Context.MODE_PRIVATE)
+        val email = sharedPreferences.getString(Constants.USER_EMAIL,"")
+        if (email != null && email.trim().isNotEmpty()){
+            callHomeActivity()
+            return
+        }
+
+
     }
 
     override fun onStart() {
@@ -53,10 +62,6 @@ open class SignInActivity : AppCompatActivity(), View.OnClickListener {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
 
     override fun onClick(v: View) {
@@ -91,14 +96,17 @@ open class SignInActivity : AppCompatActivity(), View.OnClickListener {
             editor.putString(Constants.USER_EMAIL,googleSignInAccount.email)
             editor.putString(Constants.USER_PHOTO_URL, googleSignInAccount.photoUrl.toString())
             editor.apply()
-
-            finish()
-            val homeIntent = Intent()
-            homeIntent.setClass(this, HomeActivity::class.java)
-            startActivity(homeIntent)
+            callHomeActivity()
         } else {
             btnSignInButton!!.isEnabled = true
         }
+    }
+
+    private fun callHomeActivity(){
+        val homeIntent = Intent()
+        homeIntent.setClass(this, HomeActivity::class.java)
+        homeIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(homeIntent)
     }
 
     private fun signIn() {

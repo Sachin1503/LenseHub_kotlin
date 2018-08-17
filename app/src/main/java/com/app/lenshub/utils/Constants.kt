@@ -7,6 +7,11 @@ object Constants {
 
     const val USER_ID = "com.app.UserEnd"
     const val USER_NAME = "com.app.UserName"
+    const val USER_MOBILE = "com.app.UserMobile"
+    const val USER_ADDRESS = "com.app.UserAddress"
+    const val USER_ZIP = "com.app.UserZip"
+    const val USER_CITY = "com.app.UserCity"
+    const val USER_COUNTRY = "com.app.UserCountry"
     const val USER_EMAIL = "com.app.UserEmail"
     const val USER_PHOTO_URL = "com.app.UserPhotoURL"
 
