@@ -13,6 +13,7 @@ object Constants {
     const val FRAGMENT_TYPE_MORE_ITEM = 1;
     const val FRAGMENT_TYPE_DETAIL = 1;
 
+    const val CATEGORY = "Category"
     const val CATEGORY_TYPE_CAMERA = 1;
     const val CATEGORY_TYPE_LENS = 2;
     const val CATEGORY_TYPE_EQUIPMENTS = 3;

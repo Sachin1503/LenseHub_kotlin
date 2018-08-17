@@ -1,5 +1,6 @@
 package com.app.lenshub
 
+import android.app.FragmentManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -10,6 +11,8 @@ import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -36,9 +39,13 @@ import com.google.android.gms.common.api.Status
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private val TAG = "HomeActivity"
     private var sharePreference: SharedPreferences? = null
     private var category: Category? = null
-    private var menuSearch:MenuItem? = null
+    private var menuSearch: MenuItem? = null
+    private var toolbar: Toolbar? = null;
+    private val toogle: ActionBarDrawerToggle? = null
+    private var mToolBarNavigationListenerIsRegistered = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,15 +61,32 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
         updateNavigationHeaderView(navigationView)
 
-        val toolbar = findViewById<android.support.v7.widget.Toolbar>(R.id.toolbar)
+        toolbar = findViewById<android.support.v7.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val toogle = ActionBarDrawerToggle(this,findViewById(R.id.drawer_layout),toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close)
+        val toogle = ActionBarDrawerToggle(this, findViewById(R.id.drawer_layout), toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         toogle.syncState()
 
         supportFragmentManager.replaceFragmentWithOutBackStack(R.id.container, HomeFragment())
 
+        val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
+        supportFragmentManager.addOnBackStackChangedListener(android.support.v4.app.FragmentManager.OnBackStackChangedListener {
+
+            if (supportFragmentManager.getBackStackEntryCount() > 0) {
+                    supportActionBar?.setDisplayHomeAsUpEnabled(true); // show back button
+                    toolbar?.setNavigationOnClickListener(View.OnClickListener { onBackPressed() })
+                } else {
+                    //show hamburger
+                    supportActionBar?.setDisplayHomeAsUpEnabled(false);
+                    toogle.syncState();
+                    toolbar?.setNavigationOnClickListener(View.OnClickListener {
+                        drawer.openDrawer(GravityCompat.START);
+                    })
+                    setTitle(resources.getString(R.string.app_name))
+                }
+        })
     }
+
 
     override fun onBackPressed() {
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
@@ -107,7 +131,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun handleDrawer(){
+    private fun handleDrawer() {
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START)
@@ -116,13 +140,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun launchSearchActivity(){
+    private fun launchSearchActivity() {
         val intent = Intent()
-        intent.setClass(this,SearchActivity::class.java)
+        intent.setClass(this, SearchActivity::class.java)
         startActivity(intent)
     }
 
-    private fun handelVisibilityOfSearch(isVisible:Boolean){
+    private fun handelVisibilityOfSearch(isVisible: Boolean) {
         menuSearch?.isVisible = isVisible
     }
 
@@ -159,10 +183,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
         drawer.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    fun hideActionBar(isHide:Boolean){
-
     }
 
 }
