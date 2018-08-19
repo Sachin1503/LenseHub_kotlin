@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinTestApp</string>
+    <string name="app_name">LensHub</string>
     <string name="welcome_to_lenshub">Welcome to TestApp</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_navigation">NavigationActivity</string>
@@ -11,6 +11,8 @@
     <string name="action_settings">Settings</string>
     <string name="not_implemented">Feature is not implemented</string>
     <string name="profile">Profile</string>
+    <string name="category">Category</string>
+    <string name="purchased_year">Purchased Year</string>
 
 
     <string-array name="category_array">

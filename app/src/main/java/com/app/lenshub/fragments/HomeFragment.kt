@@ -19,6 +19,7 @@ import com.app.lenshub.callback.LHOnMoreClickListener
 
 import com.app.lenshub.extensions.replaceFragmentWithBackStack
 import com.app.lenshub.model.Category
+import com.app.lenshub.model.Item
 import com.app.lenshub.utils.EqualSpacingItemDecoration
 import com.app.lenshub.utils.MasterData
 
@@ -37,7 +38,11 @@ class HomeFragment : Fragment(),LHOnMoreClickListener,LHOnClickListener {
     }
 
     override fun onClick(o: Any) {
-        Toast.makeText(activity,getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
+        val detailFragment = DetailFragment()
+        val bundle = Bundle()
+        bundle.putParcelable("item",o as Item)
+        detailFragment.arguments = bundle
+        activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container,detailFragment)
     }
 
     override fun onMoreClick(o: Any) {

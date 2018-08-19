@@ -2,7 +2,6 @@ package com.app.lenshub.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,11 +34,11 @@ class ItemAdapterList(private val list:ArrayList<Item>, private val lhOnClickLis
     fun bind(itemViewHolder: ItemViewHolder,position: Int){
         val item = list.get(position);
         itemViewHolder.textViewName.text = item.name
-        itemViewHolder.textViewPrice.text = item.price
+        itemViewHolder.textViewPrice.text = item.rent
         itemViewHolder.textViewAddress.text = item.address
         itemViewHolder.textViewBrand.text = item.brand
         Glide.with(contex!!).load(item.drawable).into( itemViewHolder.imageViewAppPhoto)
-        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
+        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(item)}
     }
 
     override fun getItemCount(): Int {

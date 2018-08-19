@@ -30,12 +30,12 @@ class ItemAdapterGrid(private val list:ArrayList<Item>, private val lhOnClickLis
         bind(itemViewHolder,position)
     }
 
-    fun bind(itemViewHolder: ItemViewHolder,position: Int){
+    private fun bind(itemViewHolder: ItemViewHolder,position: Int){
         val item = list.get(position);
         itemViewHolder.textViewName.text = item.name
-        itemViewHolder.textViewPrice.text = item.price
+        itemViewHolder.textViewPrice.text = item.rent
         Glide.with(contex!!).load(item.drawable).into( itemViewHolder.imageViewAppPhoto)
-        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(position)}
+        itemViewHolder.itemView.setOnClickListener{lhOnClickListener.onClick(item)}
     }
 
     override fun getItemCount(): Int {

@@ -15,6 +15,7 @@ import com.app.lenshub.adapter.ItemAdapterList
 import com.app.lenshub.callback.LHOnClickListener
 import android.support.v7.widget.DividerItemDecoration
 import android.widget.ImageView
+import com.app.lenshub.extensions.replaceFragmentWithBackStack
 import com.app.lenshub.model.Category
 
 
@@ -50,7 +51,11 @@ class MoreItemListFragment:Fragment(),LHOnClickListener{
     }
 
     override fun onClick(o: Any) {
-        Toast.makeText(activity,getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
+        val detailFragment = DetailFragment()
+        val bundle = Bundle()
+        bundle.putParcelable("item",o as Item)
+        detailFragment.arguments = bundle
+        activity?.supportFragmentManager?.replaceFragmentWithBackStack(R.id.container,detailFragment)
     }
 
 }

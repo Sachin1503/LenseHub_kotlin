@@ -1,9 +1,12 @@
 package com.app.lenshub
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import android.widget.Toast
+import com.app.lenshub.utils.MasterData
 import com.quinny898.library.persistentsearch.SearchBox
 import com.quinny898.library.persistentsearch.SearchResult
 
@@ -22,12 +25,14 @@ class SearchActivity :AppCompatActivity(){
         val search = findViewById<SearchBox>(R.id.searchbox)
         search.setMenuListener { handleBackPress() }
         search.enableVoiceRecognition(this)
-        search.setSearchListener(MySearchListener())
+        search.setSearchListener(MySearchListener(this))
         search.toggleSearch()
 
-        for (x in 0..9) {
-            val option = SearchResult("Result " + Integer.toString(x), resources.getDrawable(R.drawable.ic_history))
-            search.addSearchable(option)
+        for (category in MasterData.getCategoryData()) {
+            for (item in category.itemList){
+                val option = SearchResult(item.name, resources.getDrawable(R.drawable.ic_history))
+                search.addSearchable(option)
+            }
         }
 
     }
@@ -37,7 +42,7 @@ class SearchActivity :AppCompatActivity(){
     }
 
 
-    class MySearchListener : SearchBox.SearchListener {
+    class MySearchListener(val context: Context) : SearchBox.SearchListener {
         override fun onSearchOpened() {
         }
 
@@ -54,6 +59,7 @@ class SearchActivity :AppCompatActivity(){
         }
 
         override fun onResultClick(result: SearchResult?) {
+            Toast.makeText(context, context.getString(R.string.not_implemented), Toast.LENGTH_SHORT).show()
         }
 
     }

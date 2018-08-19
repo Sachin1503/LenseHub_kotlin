@@ -147,7 +147,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun handelVisibilityOfSearch(isVisible: Boolean) {
-        menuSearch?.isVisible = isVisible
+        //menuSearch?.isVisible = isVisible
     }
 
     fun setCategory(category: Category) {
